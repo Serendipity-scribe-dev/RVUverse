@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: preranams/rvuverse_app:latest  # <--- Image name with your name
+    image: preranams/rvuverse_app:latest  
     command: gunicorn rvuverse.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - .:/app
