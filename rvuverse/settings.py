@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+import sys
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -115,3 +116,6 @@ SESSION_SAVE_EVERY_REQUEST = True
 # Media files (Uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+if 'test' in sys.argv:
+    print("🧪 Running tests with database:", DATABASES['default']['NAME'])
