@@ -10,8 +10,11 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-0x!y_sg(08pq5k6_c3)9u&z1e7
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
-
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', '.repl.co','*']
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', '.repl.co','rvuverse.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['https://rvuverse.onrender.com']
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 
